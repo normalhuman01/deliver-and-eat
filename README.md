@@ -1,8 +1,5 @@
-# Deliver&Eat
 
-Aplicación de entrega de comida a domicilio para clientes, repartidores y administradores.
-
-Proyecto Final de la materia de Ingeniería de Software, 2020-2.
+Home food delivery application for customers, delivery people and administrators.
 
 <p align="center">
     <img src="./static/imagenes/Readme/1.png">
