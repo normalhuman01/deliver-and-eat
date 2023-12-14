@@ -1,0 +1,45 @@
+{% load static %}
+<title> Deliver&Eats | Editar Platillo</title>
+<link rel="stylesheet" type="text/css" href={% static 'platillo/css/editar_platillo.css'%}> 
+<link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<div class="return-btn" style="text-align: start">
+        <a class="btn btn-primary" href="../../../platillo/">Volver</a>
+</div>
+<h1> Modifica tu platillo </h1>
+
+<h3> Datos actuales del platillo "{{platillo_original.nombre}}" <h3>
+
+<div class="card-container">
+  <div class="card u-clearfix">
+    <div class="card-body">
+      <span class="card-number card-circle subtle">{{platillo_original.id}}</span>
+      <span class="card-author subtle">${{platillo_original.precio}}MXN</span>
+      <h2 class="card-title">{{platillo_original.nombre}}</h2>
+      <span class="card-description subtle">{{platillo_original.descripcion}}</span>
+    </div>
+    <img src="{{platillo_original.imagen.url}}" alt="" class="card-media" height="360" width="auto"/>
+  </div>
+  <div class="card-shadow"></div>
+</div><br>
+
+<div id="container">
+  <div></div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ formulario.errors }}
+        {{ formulario.label_tag }}
+        <label for="nombre">Nombre</label><br>
+        {{ formulario.nombre }}<br>
+        <label for="descripcion">Descripción</label><br>
+        {{ formulario.descripcion }}<br>
+        <label for="precio">Precio</label><br>
+        $ {{ formulario.precio }} MXN<br>
+        {{ formulario.imagen }}<br>
+        <input id="btnCrear" value="Editar" type="submit">
+    </form>
+    <div></div>
+  </div>
+
+

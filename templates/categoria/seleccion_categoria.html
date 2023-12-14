@@ -1,0 +1,40 @@
+{% load static %}
+<title>Seleccionar categoría</title>
+<link
+    rel="icon"
+    type="image/png"
+    href="{% static 'imagenes/icons/hamburger.png' %}"
+/>
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/categoria/crear_categoria.css' %}"
+/>
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/categoria/seleccionar_categoria.css' %}"
+/>
+
+<body>
+    <div class="container">
+        <div class="boton">
+            <a class="btn-volver" href="{% url 'categoria:IndexCategoria' %}">&laquo; Volver</a>
+        </div>
+
+        <h1>Seleccionar categoría</h1>
+    
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                {{formulario}}
+
+                <div class="actions">
+                    <input id="editar" type="submit" name="editar" value="Editar">
+                    <input id="eliminar" type="submit" name="eliminar" value="Eliminar">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

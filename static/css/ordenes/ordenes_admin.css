@@ -1,0 +1,28 @@
+body {
+    background: url("/static/imagenes/Admin5.jpg") no-repeat fixed;
+    background-size: cover;
+}
+
+.boton-admin {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 80px;
+    height: fit-content;
+    text-align: center;
+    padding: 5px 0;
+    transition: all 0.5s;
+}
+
+#editar:hover {
+    background-color: #7bd333;
+    border: 1px solid #7bd333;
+    color: white;
+}
+
+#eliminar:hover {
+    background-color: #f15151;
+    border: 1px solid #f15151;
+    color: white;
+}

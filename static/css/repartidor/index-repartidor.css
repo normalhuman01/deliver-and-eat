@@ -1,0 +1,20 @@
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+.contenedor-titulo{
+    height: 10%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+#mensaje-bienvenida{
+    letter-spacing: .1em;
+    margin: 0 auto;
+
+}

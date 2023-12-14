@@ -1,0 +1,16 @@
+body {
+    background: url("../../../static/imagenes/Admin.jpg") no-repeat fixed;
+    background-size: cover;
+}
+
+#boton-volver {
+    margin: 10px;
+}
+
+#tabla thead tr {
+    background-color: #9acd32;
+}
+
+#tabla tbody tr:last-of-type {
+    border-bottom: 3px solid #9acd32;
+}

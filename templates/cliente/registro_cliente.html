@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro</title>
+        <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+        <link rel="stylesheet" href="{% static 'css/cliente/registro.css' %}" />
+        <!-- <link rel="stylesheet" href="{% static 'css/util.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" /> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo-container">
+                <h1>Deliver&Eats</h1>
+                <img
+                    class="logo"
+                    src="../../static/imagenes/icons/hamburger.png"
+                    alt="logo"
+                />
+            </div>
+
+            <div class="reg-form-container">
+                <div class="form-container">
+                    <form action="." method="POST">
+                        {% csrf_token %}
+
+                        <span> Registro </span>
+
+                        {% for field in form %}
+                        <div class="input-container">
+                            {{ field }} {{ field.errors }}
+                        </div>
+                        {% endfor %}
+                        <br />
+                        <div class="btn-container">
+                            <button>Aceptar</button>
+                        </div>
+
+                        <div class="register-container">
+                            <a href="../../../cerrar-sesion/">
+                                ¿Ya tienes una cuenta?
+                                <span> Inicia sesión </span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

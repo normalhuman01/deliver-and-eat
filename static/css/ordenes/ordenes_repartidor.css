@@ -1,0 +1,19 @@
+body{
+    background-image: url("/static/imagenes/Repartidor2.png");
+}
+
+.boton-accion-repartidor{
+    display: inline-block;
+    background-color: #e3e3e3;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    width: 80px;
+    height: fit-content;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.boton-accion-repartidor:hover{
+    background-color: #8fdb00;
+    border: 1px solid #5fcb00;
+}

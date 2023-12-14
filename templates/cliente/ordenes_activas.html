@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Órdenes activas</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/tabla_ordenes.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/ordenes_cliente.css' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+    </head>
+
+    <body>
+        <!-- <div class="boton">
+            <a id="boton-volver" href="{% url 'cliente:HomeCliente' %}"
+                >&laquo; Volver</a
+            >
+        </div> -->
+
+        <div class="contenedor">
+            <div class="boton">
+                <a id="boton-volver" href="{% url 'cliente:HomeCliente' %}"
+                    >&laquo; Volver</a
+                >
+            </div>
+
+            <h1 id="bienvenida">Órdenes activas</h1>
+            <h3>Estas son tus órdenes en proceso de entrega</h3>
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Precio</td>
+                        <td>Repartidor</td>
+                        <td>Platillos</td>
+                        <td>Estado Orden</td>
+                        <td>Direccion</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if ordenes %} {% for orden in ordenes%}
+                    <tr>
+                        <td>{{orden.id_orden}}</td>
+                        <td>${{orden.precio_orden}}.00</td>
+                        <td>{{orden.id_repartidor_orden}}</td>
+                        <td>
+                            {% for platillo in orden.id_platillo_orden.all %}
+                            {{platillo}}
+                            <br />
+                            {% endfor %}
+                        </td>
+                        <td>{{orden.id_estado_orden}}</td>
+                        <td>{{orden.direccion_entrega_orden}}</td>
+                    </tr>
+                    {% endfor %} {% else %}
+                    <h1>
+                        No tienes órdenes activas. Revisa tu historial de
+                        órdenes
+                    </h1>
+
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

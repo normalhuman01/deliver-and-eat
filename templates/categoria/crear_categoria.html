@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crear categoria</title>
+    
+    <link
+        rel="stylesheet"
+        href="{% static 'css/categoria/crear_categoria.css' %}"
+    />
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="{% static 'imagenes/icons/hamburger.png' %}"
+    />
+</head>
+    <body>
+        <div class="container">
+            <div class="boton">
+                <a class="btn-volver" href="../../../categoria/">&laquo; Volver</a>
+            </div>
+            
+            <h1>Crea una categoría</h1>
+            
+            <div class="form-container">
+                <form action="../../../categoria/crear-categoria/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="crear_categoria_input">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }} 
+                    </div>
+                    {% endfor %}
+
+                    <input value="Confirmar" type="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<title>Deliver&Eats | Menú</title>
+<link
+    rel="icon"
+    type="image/png"
+    href="{% static 'imagenes/icons/hamburger.png' %}"
+/>
+
+<link rel="stylesheet" href="{% static 'css/cliente/menu.css' %}" />
+
+<div class="container">
+    <div class="boton">
+        <a class="btn-volver" href="../../../home/">&laquo; Volver</a>
+    </div>
+    <h1>Nuestro menú</h1>
+
+    {% for platillo_original in platillos%}
+
+    <div class="tab">{{platillo_original.categoria}}</div>
+    <div class="card-container">
+        <div class="card-body">
+            <!-- <span class="card-number card-circle subtle"
+                >{{platillo_original.id}}</span
+            > -->
+            <!-- <span class="card-author subtle"
+                >${{platillo_original.precio}}MXN</span
+            > -->
+            <h2>{{platillo_original.nombre}}</h2>
+            <hr />
+            <p>{{platillo_original.descripcion}}</p>
+            
+            <span>${{platillo_original.precio}}MXN</span>
+            <a
+                class="add-cart"
+                href="{% url 'cliente:cart_add' platillo_original.id %}"
+                >Añadir al carrito</a
+            >
+        </div>
+        <div class="dish">
+            <img
+                src="{{platillo_original.imagen.url}}"
+                alt=""
+                class="card-media"
+                height="380"
+                width="auto"
+            />
+        </div>
+    </div>
+
+    {% endfor %}
+</div>

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+* {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: url("/static/imagenes/home.jpg") no-repeat fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    color: white;
+}
+
+#seleccion {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(219, 219, 219, 0.22);
+}
+
+h1 {
+    padding: 20px 0;
+    font-family: "Quicksand", sans-serif;
+    font-size: 5em;
+    color: black;
+    text-shadow: 1px 2px white;
+}
+
+#container {
+    display: flex;
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.btn {
+    width: 200px;
+    height: 200px;
+    margin: 15px 100px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+i {
+    font-size: 5em;
+}
+
+p {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgba(228, 118, 15);
+    color: white;
+}

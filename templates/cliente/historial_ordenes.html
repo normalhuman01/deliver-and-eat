@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Órdenes asignadas</title>
+
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/tabla_ordenes.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/ordenes_cliente.css' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+    </head>
+
+    <body>
+        <div class="contenedor">
+            <div class="boton">
+                <a id="boton-volver" href="{% url 'cliente:HomeCliente' %}"
+                    >&laquo; Volver</a
+                >
+            </div>
+            <h1 id="titulo">Historial de órdenes</h1>
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Precio</td>
+                        <td>Repartidor</td>
+                        <td>Platillos</td>
+                        <td>Estado Orden</td>
+                        <td>Direccion</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if ordenes %} {% for orden in ordenes%}
+                    <tr>
+                        <td>{{orden.id_orden}}</td>
+                        <td>${{orden.precio_orden}}.00</td>
+                        <td>{{orden.id_repartidor_orden}}</td>
+                        <td>
+                            {% for platillo in orden.id_platillo_orden.all %}
+                            {{platillo}}
+                            <br />
+                            {% endfor %}
+                        </td>
+                        <td>{{orden.id_estado_orden}}</td>
+                        <td>{{orden.direccion_entrega_orden}}</td>
+                    </tr>
+                    {% endfor %} {% else %}
+                    <h1>No tienes órdenes realizadas</h1>
+
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

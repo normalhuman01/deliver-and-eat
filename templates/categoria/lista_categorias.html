@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de categorias</title>
+
+	<link rel="stylesheet" href="{% static 'css/categoria/lista_categorias.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ordenes/tabla_ordenes.css' %}">
+    <link
+    rel="icon"
+    type="image/png"
+    href="{% static 'imagenes/icons/hamburger.png' %}"
+/>
+
+</head>
+<body>
+
+    <div class="boton">
+            <a id="boton-volver" href="{% url 'categoria:IndexCategoria' %}">&laquo; Volver</a>
+    </div>
+
+    <h1>Categorías</h1>
+
+    <div class="contenedor">
+
+        <table class="content-table" id="tabla">
+        	<thead>
+
+        		<tr>
+        			<td>#</td>
+        			<td>Nombre de categoría</td>
+        		</tr>
+
+        	</thead>
+        	<tbody>
+                {% if categorias %}
+        		{% for categoria in categorias %}
+        		<tr>
+        			<td>{{categoria.id_categoria}}</td>
+        			<td>{{categoria}}</td>
+
+        		</tr>
+                {% endfor %}
+                {% else %}
+        	</tbody>
+                <h1>No existen categorias generadas</h1>
+
+        		<br>
+        		<div class="imagen-vacia" align="center">
+        				<img class="img-fluid rounded d-block m-l-none" style="width: 100px; height: 200px;" src="{% static 'imagenes/categorias/categorias-vacias.jpg' %}" align="center" />
+        		</div>
+                {% endif %}
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-image: url("/static/imagenes/OrdenesCliente2.jpg");
+}
+
+.contenedor {
+    height: 100vh;
+    padding-top: 10px;
+    background-color: rgba(118, 118, 118, 0.13);
+}

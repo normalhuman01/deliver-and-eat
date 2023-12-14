@@ -1,0 +1,70 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'platillo/css/editar_platillo.css'%}"
+        />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Ordenes administrador</title>
+        <link rel="stylesheet" href="" />
+    </head>
+
+    <body>
+        <div class="return-btn" style="text-align: start">
+            <a
+                class="btn btn-primary"
+                href="../../../administrador/lista-ordenes/"
+                >Volver</a
+            >
+        </div>
+        <!--
+<div class="card-container" style="color:black;">
+<div class="card u-clearfix" >
+        Esto jala sin el form de ORDEN   
+		<ul>
+        {% for orden in ordenes  %}
+        <li>{{orden}}</li>
+        {% endfor %}
+        </ul>
+        
+<div>
+<div>
+-->
+        <div id="container">
+            <form method="post" accept-charset="utf-8">
+                {% csrf_token %} {{ form.errors }} {{ form.label_tag }}
+                <label for="precio_orden">Precio</label><br />
+                $ {{ form.precio_orden }} MXN<br />
+                <label for="id_cliente_orden">Cliente</label><br />
+                {{ form.id_cliente_orden }}<br />
+                <label for="id_repartidor_orden">Repartidor</label><br />
+                {{ form.id_repartidor_orden }}<br />
+                <label for="id_repartidor_orden">Estado orden</label><br />
+                {{ form.id_estado_orden }}<br />
+                <label for="id_repartidor_orden">Platillos</label><br />
+                {{ form.id_platillo_orden }}<br />
+                <label for="id_repartidor_orden">Dirección entrega</label><br />
+                {{ form.direccion_entrega_orden }}<br />
+
+                <input id="btnCrear" value="Editar" type="submit" />
+            </form>
+        </div>
+    </body>
+</html>

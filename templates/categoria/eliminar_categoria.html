@@ -1,0 +1,11 @@
+{% load static %}
+<title>Deliver&Eats | Crear Platillo</title>
+<link rel="stylesheet" type="text/css" href={% static 'css/categoria/eliminar_categoria.css'%}> 
+<link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+
+<h3>Estas seguro que deseas eliminar la categoria?</h3>
+<form method="POST">
+    {% csrf_token %}
+    <input id="btnEliminar" type="submit" value="Si, estoy seguro">
+    <a href="{% url 'categoria:selecciona_categoria'%}"><button id="btnSalir" type="button">NO!</button></a>
+</form>

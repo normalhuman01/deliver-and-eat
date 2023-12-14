@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Órdenes asignadas</title>
+
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/tabla_ordenes.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'css/ordenes/ordenes_repartidor.css' %}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+    </head>
+    <body>
+        <div class="boton">
+            <a id="boton-volver" href="{% url 'repartidor:index_repartidor' %}"
+                >&laquo; Volver</a
+            >
+        </div>
+
+        <div class="contenedor">
+            <h1 id="bienvenida">Órdenes asignadas</h1>
+            <h3>Aquí tienes tus órdenes asignadas para entregar</h3>
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <td>Numero de orden</td>
+                        <td>Precio</td>
+                        <td>Cliente</td>
+                        <td>Repartidor</td>
+                        <td>Platillos</td>
+                        <td>Estado Orden</td>
+                        <td>Direccion</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if ordenes %} {% for orden in ordenes%}
+                    <tr>
+                        <td>{{orden.id_orden}}</td>
+                        <td>${{orden.precio_orden}}.00</td>
+                        <td>{{orden.id_cliente_orden}}</td>
+                        <td>{{orden.id_repartidor_orden}}</td>
+                        <td>
+                            {% for platillo in orden.id_platillo_orden.all %}
+                            {{platillo}}
+                            <br />
+                            {% endfor %}
+                        </td>
+                        <td>{{orden.id_estado_orden}}</td>
+                        <td>{{orden.direccion_entrega_orden}}</td>
+                        <td>
+                            <a
+                                class="boton-accion-repartidor"
+                                href="{% url 'repartidor:finalizar_entrega' orden.id_orden %}"
+                                >Finalizar entrega</a
+                            >
+                        </td>
+                    </tr>
+                    {% endfor %} {% else %}
+                    <h1>No tienes órdenes asignadas</h1>
+
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

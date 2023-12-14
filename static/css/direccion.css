@@ -1,0 +1,214 @@
+body {
+  background: url("/static/imagenes/direccion.jpg") no-repeat fixed;
+  background-size: 100%;
+  font-family: "Istok Web", sans-serif;
+  text-align: center;
+  color: white;
+  margin: 5px 5px;
+  padding: 10px, 10px;
+}
+
+h1 {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px black;
+}
+
+#container {
+  color: black;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 5%;
+}
+
+#container form {
+  background: rgba(255, 255, 255, 0.863);
+  padding: 20px 50px 20px 50px;
+  border-radius: 20px;
+  border: solid rgba(228, 118, 15);
+}
+
+.campo {
+  height: 35px;
+  background: rgba(255, 255, 255, 0.9);
+  border: solid 2px rgba(228, 118, 15);
+  border-radius: 10px;
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  padding: 2px 0px 2px 0px;
+}
+
+.campoDescripcion {
+  width: 300;
+  height: 150;
+  resize: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: solid 2px rgba(228, 118, 15);
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Istok Web", sans-serif;
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+label {
+  font-size: large;
+  font-weight: bolder;
+  font-family: "Istok Web", sans-serif;
+}
+
+#btnCrear {
+  margin-top: 50px;
+  height: 40px;
+  width: 150px;
+  border: solid 2px rgba(228, 118, 15);
+  border-radius: 80px;
+  transition: all 1s ease;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+#btnCrear:hover {
+  background-color: #f44336;
+  color: white;
+  transform: scale(1.1) perspective(1px);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.u-clearfix:before,
+.u-clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.u-clearfix:after {
+  clear: both;
+}
+
+.u-clearfix {
+  *zoom: 1;
+}
+
+.subtle {
+  color: black;
+}
+
+.card-container {
+  margin: 0px auto 0;
+  position: relative;
+  width: 80vw;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.911);
+  padding: 0px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
+  z-index: 1;
+}
+
+.card-body {
+  display: inline-block;
+  float: left;
+  width: 310px;
+}
+
+.card-number {
+  margin-top: 15px;
+}
+
+.card-circle {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 22px;
+  font-size: 12px;
+  height: 25px;
+  text-align: center;
+  width: 25px;
+}
+
+.card-author {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-family: "Cormorant Garamond", serif;
+  color: black;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 60px;
+  margin: 10px 0;
+}
+
+.card-description {
+  display: inline-block;
+  font-weight: 300;
+  line-height: 22px;
+  margin: 10px 0;
+  font-size: larger;
+}
+
+.card-read:after {
+  background-color: #b8bddd;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 9px;
+  width: 75%;
+}
+
+.card-tag {
+  float: right;
+  margin: 5px 0 0;
+}
+
+.card-media {
+  float: right;
+}
+
+.card-shadow {
+  background-color: #fff;
+  box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1),
+    0 0 100px 3px rgba(0, 0, 0, 0.25);
+  height: 1px;
+  margin: -1px auto 0;
+  width: 80%;
+  z-index: -1;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 10px;
+  row-gap: 0px;
+}
+
+form #first {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 5px;
+}
+
+.contenido {
+  justify-self: right;
+}

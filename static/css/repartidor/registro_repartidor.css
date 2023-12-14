@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+}
+
+body {
+    background: url("/static/imagenes/Repartidor-fondo3.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 100% 30%;
+}
+
+.container {
+    height: 100vh;
+    background-color: rgba(185, 185, 185, 0.26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    padding: 20px 0;
+    margin: 0;
+    font-size: 5em;
+    color: black;
+    text-shadow: 1px 2px white;
+    text-align: center;
+}
+
+.boton {
+    width: 100%;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.btn-volver {
+    width: 80px;
+    height: 25px;
+    padding-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+    background: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.btn-volver:hover {
+    background-color: #f28b2a;
+    border: 2px solid #f28b2a;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-container {
+    width: 320px;
+    height: 380px;
+    margin: 50px;
+    background-color: rgb(207, 207, 207);
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    height: 35px;
+    margin: 15px 0;
+    padding-left: 15px;
+    font-size: 1.3em;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+input[type="submit"] {
+    margin: 20px 0;
+    padding: 5px 15px;
+    background: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(255, 123, 0);
+    border: 2px solid rgb(255, 123, 0);
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: red;
+}

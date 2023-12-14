@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Quicksand&display=swap");
+
+* {
+    margin: 0;
+    font-family: Quicksand;
+}
+body {
+    background: url("/static/imagenes/Carrito.jpg") no-repeat center center
+        fixed;
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(118, 118, 118, 0.13);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-top: 60px;
+    font-family: "Josefin Slab", serif;
+    font-size: 6em;
+    color: black;
+    text-shadow: 4px -1px 1px white;
+    font-weight: 700;
+}
+
+.logo {
+    width: 70px;
+    margin: 40px 0 0 20px;
+}
+
+.log-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-container {
+    margin-bottom: 20px;
+}
+
+.admin-container > a {
+    font-size: 1.2em;
+}
+
+a > span {
+    color: rgb(255, 123, 0);
+    font-weight: 600;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.form-container {
+    width: 320px;
+    height: 380px;
+    background-color: rgb(207, 207, 207);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form > span {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 25px;
+}
+
+input {
+    height: 35px;
+    margin: 15px 0;
+    padding-left: 15px;
+    font-size: 1.3em;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+form button {
+    margin: 20px 0;
+    padding: 5px 15px;
+    background: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form button:hover {
+    background-color: rgb(255, 123, 0);
+    border: 2px solid rgb(255, 123, 0);
+    color: white;
+}
+
+.register-container {
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: red;
+}

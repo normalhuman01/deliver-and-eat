@@ -1,0 +1,50 @@
+{% load static %}
+<title>Editar categoría</title>
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/categoria/crear_categoria.css' %}"
+/>
+
+<link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="{% static 'css/categoria/editar_categoria.css'%}"
+/> 
+
+<link
+    rel="icon"
+    type="image/png"
+    href="{% static 'imagenes/icons/hamburger.png' %}"
+/>
+
+<body>
+    <div class="container">
+        <div class="boton">
+            <a class="btn-volver" href="../../../categoria/">&laquo; Volver</a>
+        </div>
+
+        <h1>Editar categoría</h1>
+
+        <div class="form-container">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+            <!--
+                {{ formulario.nombre_categoria }}<br>
+                {{ formulario.errors }}
+            -->
+            <label for="nombre">Nuevo nombre:</label>
+            
+            {% for field in formulario %}
+            <div class="wrap-input100 validate-input m-b-20">
+                {{ field }}
+                <span class="focus-input100"></span>
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                
+                <input id="btnCrear" value="Editar" type="submit">
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static%}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{% static 'css/cliente/index_cliente.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/index_administrador.css'%}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+            integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+            crossorigin="anonymous"
+        />
+        <title>Deliver&Eats | Administrador</title>
+    </head>
+    <body>
+        <div id="seleccion">
+            <div class="logout">
+                <a href="../../../cerrar-sesion/"
+                    ><button type="button" class="logout-btn">
+                        Cerrar Sesión
+                    </button></a
+                >
+            </div>
+            <h1>Bienvenido Administrador</h1>
+            <div id="container">
+                <div>
+                    <a href="{% url 'platillos'%}"
+                        ><button type="button" class="btn">
+                            <i class="fas fa-pizza-slice"></i>
+                            <p>Platillos</p>
+                        </button></a
+                    >
+                </div>
+                <div>
+                    <a href="../../../administrador/lista-ordenes/"
+                        ><button type="button" class="btn">
+                            <i class="fas fa-utensils"></i>
+                            <p>Ordenes</p>
+                        </button></a
+                    >
+                </div>
+            </div>
+            <div id="container">
+                <div>
+                    <a href="../../../categoria"
+                        ><button type="button" class="btn">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>Categorías</p>
+                        </button></a
+                    >
+                </div>
+                <div>
+                    <a href="./../../repartidor/registro-repartidor/"
+                        ><button type="button" class="btn">
+                            <i class="fas fa-motorcycle"></i>
+                            <p>Registrar repartidor</p>
+                        </button></a
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

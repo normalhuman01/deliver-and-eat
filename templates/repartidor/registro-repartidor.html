@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/repartidor/registro_repartidor.css' %}">
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'imagenes/icons/hamburger.png' %}"
+        />
+		<title>Registrar repartidor</title>
+	</head>
+	<body>
+        <div class="container">
+
+            <div class="boton">
+                    <a class="btn-volver" href="{% url 'administrador:IndexAdministrador' %}">&laquo; Volver</a>
+            </div>
+
+            <h1>Registrar repartidor</h1>
+
+            <div class="form-container">
+        		<form class="formulario-repartidor" action="." method="POST" enctype="multipart/form-data">
+        			{% csrf_token %}
+
+        			{% for field in form %}
+        			<div class="formulario-repartidor-informacion">
+                        {% if not field.is_hidden%}
+                            {{ field }}
+                            {{ field.errors }}
+                        {% endif %}
+
+        			</div>
+        			{% endfor %}
+        			<input value="Registrar" type="submit" class="btn" id="boton-registrar">
+        		</form>
+            </div>
+        </div>
+	</body>
+</html>
